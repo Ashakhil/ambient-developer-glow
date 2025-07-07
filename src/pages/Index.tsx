@@ -7,6 +7,7 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
+import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
   return (
@@ -22,18 +23,28 @@ const Index = () => {
         <div id="home">
           <HeroSection />
         </div>
+        <Separator className="bg-gradient-to-r from-transparent via-neon-teal/30 to-transparent h-px" />
+        
         <div id="about">
           <AboutSection />
         </div>
+        <Separator className="bg-gradient-to-r from-transparent via-neon-blue/30 to-transparent h-px" />
+        
         <div id="education">
           <EducationSection />
         </div>
+        <Separator className="bg-gradient-to-r from-transparent via-neon-purple/30 to-transparent h-px" />
+        
         <div id="tech-stack">
           <TechStackSection />
         </div>
+        <Separator className="bg-gradient-to-r from-transparent via-neon-green/30 to-transparent h-px" />
+        
         <div id="projects">
           <ProjectsSection />
         </div>
+        <Separator className="bg-gradient-to-r from-transparent via-neon-teal/30 to-transparent h-px" />
+        
         <div id="contact">
           <ContactSection />
         </div>
