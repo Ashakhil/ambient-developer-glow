@@ -1,11 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
+
 export const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
+  const downloadResume = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Path to your resume file in the public folder
+    link.download = 'Akhil_Mekala_Resume.pdf'; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const socialLinks = [{
     icon: Github,
     href: "https://github.com",
@@ -27,6 +39,7 @@ export const HeroSection = () => {
     label: "Phone",
     color: "hover:text-neon-green"
   }];
+
   return <section className="min-h-screen flex items-center section-padding pt-24">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -38,7 +51,7 @@ export const HeroSection = () => {
                 <span className="text-white">Mekala</span>
               </h1>
               <h2 className="text-2xl lg:text-3xl text-neon-teal font-medium">Web Developer | AI Enthusiast</h2>
-              <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">I’m passionate about building innovative web applications and exploring new technologies to tackle real-world problems. I love crafting digital experiences that seamlessly blend creativity with cutting-edge technology, delivering impactful solutions and engaging user experiences.</p>
+              <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">I'm passionate about building innovative web applications and exploring new technologies to tackle real-world problems. I love crafting digital experiences that seamlessly blend creativity with cutting-edge technology, delivering impactful solutions and engaging user experiences.</p>
             </div>
 
             {/* Buttons */}
@@ -52,7 +65,7 @@ export const HeroSection = () => {
                 View Projects
               </Button>
               
-              <Button variant="outline" className="border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-bg px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105">
+              <Button onClick={downloadResume} variant="outline" className="border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-bg px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105">
                 <Download className="mr-2 h-5 w-5" />
                 Resume
               </Button>
