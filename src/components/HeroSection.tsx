@@ -38,10 +38,7 @@ export const HeroSection = () => {
                 <span className="text-white">Mekala</span>
               </h1>
               <h2 className="text-2xl lg:text-3xl text-neon-teal font-medium">Web Developer | AI Enthusiast</h2>
-              <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">
-                I'm passionate about building innovative web applications and exploring AI solutions. 
-                Crafting digital experiences that merge creativity with cutting-edge technology.
-              </p>
+              <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">I’m passionate about building innovative web applications and exploring new technologies to tackle real-world problems. I love crafting digital experiences that seamlessly blend creativity with cutting-edge technology, delivering impactful solutions and engaging user experiences.</p>
             </div>
 
             {/* Buttons */}
