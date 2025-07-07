@@ -1,33 +1,43 @@
-
 import { Button } from "@/components/ui/button";
 import { Download, ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
-
 export const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub", color: "hover:text-neon-blue" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-neon-teal" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email", color: "hover:text-neon-purple" },
-    { icon: Phone, href: "tel:+1234567890", label: "Phone", color: "hover:text-neon-green" },
-  ];
-
-  return (
-    <section className="min-h-screen flex items-center section-padding pt-24">
+  const socialLinks = [{
+    icon: Github,
+    href: "https://github.com",
+    label: "GitHub",
+    color: "hover:text-neon-blue"
+  }, {
+    icon: Linkedin,
+    href: "https://linkedin.com",
+    label: "LinkedIn",
+    color: "hover:text-neon-teal"
+  }, {
+    icon: Mail,
+    href: "mailto:hello@example.com",
+    label: "Email",
+    color: "hover:text-neon-purple"
+  }, {
+    icon: Phone,
+    href: "tel:+1234567890",
+    label: "Phone",
+    color: "hover:text-neon-green"
+  }];
+  return <section className="min-h-screen flex items-center section-padding pt-24">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold">
-                <span className="text-gradient">Alex</span>{" "}
-                <span className="text-white">Johnson</span>
+                <span className="text-gradient">Akhil</span>{" "}
+                <span className="text-white">Mekala</span>
               </h1>
-              <h2 className="text-2xl lg:text-3xl text-neon-teal font-medium">
-                Developer | AI Enthusiast
-              </h2>
+              <h2 className="text-2xl lg:text-3xl text-neon-teal font-medium">Web Developer | AI Enthusiast</h2>
               <p className="text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">
                 I'm passionate about building innovative web applications and exploring AI solutions. 
                 Crafting digital experiences that merge creativity with cutting-edge technology.
@@ -36,26 +46,16 @@ export const HeroSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-neon-teal to-neon-blue hover:from-neon-blue hover:to-neon-purple text-white px-8 py-6 text-lg rounded-xl glow-border-hover transition-all duration-300 hover:scale-105"
-              >
+              <Button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-neon-teal to-neon-blue hover:from-neon-blue hover:to-neon-purple text-white px-8 py-6 text-lg rounded-xl glow-border-hover transition-all duration-300 hover:scale-105">
                 Contact Me
                 <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button 
-                onClick={() => scrollToSection('projects')}
-                variant="outline"
-                className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
-              >
+              <Button onClick={() => scrollToSection('projects')} variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105">
                 View Projects
               </Button>
               
-              <Button 
-                variant="outline"
-                className="border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-bg px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105"
-              >
+              <Button variant="outline" className="border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-bg px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105">
                 <Download className="mr-2 h-5 w-5" />
                 Resume
               </Button>
@@ -75,28 +75,27 @@ export const HeroSection = () => {
               
               {/* Social handles positioned around the image */}
               <div className="absolute -left-16 top-1/2 -translate-y-1/2 flex flex-col space-y-4">
-                {socialLinks.map(({ icon: Icon, href, label, color }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-gray-400 ${color} transition-all duration-300 hover:scale-125 p-3 rounded-lg hover:bg-gray-800/50 bg-dark-card/30 backdrop-blur-sm border border-gray-800`}
-                    aria-label={label}
-                  >
+                {socialLinks.map(({
+                icon: Icon,
+                href,
+                label,
+                color
+              }) => <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={`text-gray-400 ${color} transition-all duration-300 hover:scale-125 p-3 rounded-lg hover:bg-gray-800/50 bg-dark-card/30 backdrop-blur-sm border border-gray-800`} aria-label={label}>
                     <Icon className="h-6 w-6" />
-                  </a>
-                ))}
+                  </a>)}
               </div>
               
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-teal rounded-full animate-float opacity-60"></div>
-              <div className="absolute -bottom-8 -left-8 w-6 h-6 bg-neon-purple rounded-full animate-float opacity-40" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -right-12 w-4 h-4 bg-neon-blue rounded-full animate-float opacity-50" style={{animationDelay: '2s'}}></div>
+              <div className="absolute -bottom-8 -left-8 w-6 h-6 bg-neon-purple rounded-full animate-float opacity-40" style={{
+              animationDelay: '1s'
+            }}></div>
+              <div className="absolute top-1/2 -right-12 w-4 h-4 bg-neon-blue rounded-full animate-float opacity-50" style={{
+              animationDelay: '2s'
+            }}></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
