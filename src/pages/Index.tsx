@@ -6,7 +6,7 @@ import { TechStackSection } from "@/components/TechStackSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
-import { SocialSidebar } from "@/components/SocialSidebar";
+import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
   return (
@@ -14,17 +14,29 @@ const Index = () => {
       {/* Ambient background gradient */}
       <div className="fixed inset-0 bg-gradient-ambient opacity-50 pointer-events-none" />
       
-      {/* Social sidebar */}
-      <SocialSidebar />
+      {/* Navigation bar */}
+      <Navigation />
       
       {/* Main content */}
       <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <EducationSection />
-        <TechStackSection />
-        <ProjectsSection />
-        <ContactSection />
+        <div id="home">
+          <HeroSection />
+        </div>
+        <div id="about">
+          <AboutSection />
+        </div>
+        <div id="education">
+          <EducationSection />
+        </div>
+        <div id="tech-stack">
+          <TechStackSection />
+        </div>
+        <div id="projects">
+          <ProjectsSection />
+        </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
         <Footer />
       </main>
     </div>

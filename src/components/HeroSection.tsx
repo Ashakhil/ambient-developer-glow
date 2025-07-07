@@ -1,14 +1,21 @@
 
 import { Button } from "@/components/ui/button";
-import { Download, ArrowDown } from "lucide-react";
+import { Download, ArrowDown, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const socialLinks = [
+    { icon: Github, href: "https://github.com", label: "GitHub", color: "hover:text-neon-blue" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-neon-teal" },
+    { icon: Mail, href: "mailto:hello@example.com", label: "Email", color: "hover:text-neon-purple" },
+    { icon: Phone, href: "tel:+1234567890", label: "Phone", color: "hover:text-neon-green" },
+  ];
+
   return (
-    <section id="home" className="min-h-screen flex items-center section-padding">
+    <section className="min-h-screen flex items-center section-padding pt-24">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
@@ -55,7 +62,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - Profile image */}
+          {/* Right side - Profile image with social handles */}
           <div className="flex justify-center lg:justify-end animate-slide-in-right">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-neon-teal via-neon-blue to-neon-purple p-1 animate-glow-pulse">
@@ -65,10 +72,27 @@ export const HeroSection = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* Social handles positioned around the image */}
+              <div className="absolute -left-16 top-1/2 -translate-y-1/2 flex flex-col space-y-4">
+                {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-400 ${color} transition-all duration-300 hover:scale-125 p-3 rounded-lg hover:bg-gray-800/50 bg-dark-card/30 backdrop-blur-sm border border-gray-800`}
+                    aria-label={label}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </a>
+                ))}
+              </div>
+              
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-neon-teal rounded-full animate-float opacity-60"></div>
               <div className="absolute -bottom-8 -left-8 w-6 h-6 bg-neon-purple rounded-full animate-float opacity-40" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -left-12 w-4 h-4 bg-neon-blue rounded-full animate-float opacity-50" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-1/2 -right-12 w-4 h-4 bg-neon-blue rounded-full animate-float opacity-50" style={{animationDelay: '2s'}}></div>
             </div>
           </div>
         </div>
